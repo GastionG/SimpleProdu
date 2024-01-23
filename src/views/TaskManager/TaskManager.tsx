@@ -84,7 +84,7 @@ export default function TaskManager() {
                 },
               ]}
             >
-              <View>
+              <View style={styles.taskCardContent}>
                 <Text style={styles.taskCardTitle}>{task.title}</Text>
                 <Text style={styles.taskCardDescription}>{task.description}</Text>
               </View>
@@ -136,6 +136,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#fff',
+  },
+  taskCardContent: {
+    flexShrink: 1,
   },
   taskCardTitle: {
     fontSize: 20,
