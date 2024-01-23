@@ -11,6 +11,7 @@ interface TaskForm {
   title: string;
   description?: string;
   notification?: Date | null;
+  notificationId?: string;
 }
 export default function AddTask({ route }: { route?: RouteProp<RootStackParams, 'AddTask'> }) {
   const [form, setForm] = useState<TaskForm>({ title: '', description: '', notification: null });
@@ -75,7 +76,7 @@ export default function AddTask({ route }: { route?: RouteProp<RootStackParams, 
         await taskService.editTask({
           ...form,
           id: route?.params?.id,
-          notification: { date: form.notification },
+          notification: { id: form.notificationId, date: form.notification },
           status: 'TODO',
         });
       } else {
