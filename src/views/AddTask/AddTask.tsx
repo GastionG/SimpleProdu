@@ -111,6 +111,7 @@ export default function AddTask({ route }: { route?: RouteProp<RootStackParams, 
         title: task.title,
         description: task.description,
         notification: task.notification?.date,
+        notificationId: task.notification?.id,
       });
     }
   };
